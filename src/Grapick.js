@@ -457,7 +457,7 @@ export default class Grapick extends EventEmitter {
       context.fillRect(0, 0, canvas.width, canvas.height);
       canvas.style.background = 'black';
       const colourValues = canvas.getContext('2d').getImageData(x, y, 1, 1).data;
-      const color = `#${colourValues[0].toString(16)}, ${colourValues[1].toString(16)}, ${colourValues[2].toString(16)}`;
+      const color = `#${colourValues[0].toString(16)}${colourValues[1].toString(16)}${colourValues[2].toString(16)}`;
       const fc = color == '#000000' ? opt.emptyColor : color;
       this.addHandler(percentage, fc);
     });
